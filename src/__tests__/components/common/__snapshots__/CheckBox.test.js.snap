@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CheckBox 1`] = `
+<div
+  className="container-0-2-1"
+>
+  <div
+    className="label-0-2-2"
+  >
+    Confident in your sighting?
+     : 
+  </div>
+  <input
+    cheked="true"
+    onChange={[Function]}
+    type="checkbox"
+  />
+</div>
+`;

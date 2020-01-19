@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import store from './store.js';
+import { Provider } from "react-redux";
+import SpottingsList from './components/spottings/SpottingsList';
+import SubmitSpotting from './components/spottings/SubmitSpotting';
+import SubmitSpottingButton from './components/spottings/SubmitSpottingButton';
+import BirdTypeFilters from './components/filters/BirdTypeFilters';
+import ConfidenceFilters from './components/filters/ConfidenceFilters';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div className="App">
+            <SubmitSpottingButton />
+            <SubmitSpotting />
+            <ConfidenceFilters />
+            <BirdTypeFilters />
+            <SpottingsList />
+        </div>
+      </Provider>
+    );
+  }
 }
 
 export default App;

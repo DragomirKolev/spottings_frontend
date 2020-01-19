@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Spotting 1`] = `
+<div
+  className="row-0-2-1"
+  onClick={[Function]}
+>
+  <img
+    alt="logo"
+    height="24px"
+    src="arrow_down.svg"
+    width="24px"
+  />
+  <div
+    className="rowContent-0-2-2"
+  >
+    <div
+      className="rowItem-0-2-3"
+    >
+       Date and Time : 
+      19/1/2020 
+  15:17
+    </div>
+    <div
+      className="rowItem-0-2-3"
+    >
+       Bird Type : 
+      pidgeon
+    </div>
+    <div
+      className="rowItem-0-2-3"
+    >
+       Confident : 
+      Yes
+    </div>
+  </div>
+</div>
+`;

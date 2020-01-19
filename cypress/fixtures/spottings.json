@@ -1,0 +1,28 @@
+{
+  "response": [
+    {
+      "_id": "5e24b17e10d4c23164daeb80",
+      "date_time": "2020-01-22T23:17:51.495Z",
+      "location": "in the middle of nowhere",
+      "bird_type": "seagul",
+      "name": "George Paul",
+      "confident": true
+    },
+    {
+      "_id": "5e24b17e10d4c23164daeb81",
+      "date_time": "2020-01-22T22:17:51.495Z",
+      "location": "in the middle of nowhere",
+      "bird_type": "pidgeon",
+      "name": "George Paul",
+      "confident": false
+    },
+    {
+      "_id": "5e24b17e10d4c23164daeb82",
+      "date_time": "2020-01-22T21:17:51.495Z",
+      "location": "in the middle of nowhere",
+      "bird_type": "owl",
+      "name": "George Paul",
+      "confident": true
+    }
+  ]
+}
