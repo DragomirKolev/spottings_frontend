@@ -1,9 +1,9 @@
 ## To Start the Project
-  0) Prerequisites:
+  0. Prerequisites:
     - run https://github.com/DragomirKolev/spottings_api
 
-  1) open this project folder && npm ci
-  2) npm start
+  1. open this project folder && npm ci
+  2. npm start
 
 In the project directory, you can run:
 
