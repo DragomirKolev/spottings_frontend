@@ -5,8 +5,7 @@ import { actions as spottingsActions } from './spottings';
 import { actions as filtersActions } from './filter';
 
 const callActions = ( actionTypes, data ) => actionTypes.length > 0
-    && actionTypes.forEach((actionType) =>
-        store.dispatch({type: actionType, data: data.response}));
+    && actionTypes.forEach((actionType) => store.dispatch({type: actionType, data: data.response}));
 
 const API_ROOT = 'http://localhost:5001/api/v1';
 
