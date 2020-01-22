@@ -21,10 +21,7 @@ const useStyles = createUseStyles({
   }
 });
 
-const getUserFacingTimestamp = (date) => {
-  return `${date.getDate()}/${1 + date.getMonth()}/${date.getFullYear()} 
-  ${date.getHours()}:${date.getMinutes()}`
-}
+const getUserFacingTimestamp = (date) => `${date.getDate()}/${1 + date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`
 
 const Spotting = ({ spotting }) => {
   const classes = useStyles();

@@ -6,36 +6,29 @@ const INITIAL_STATE = {
   
 const filtersReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case actions.ADD_FILTER: {
-            const newState = state.filters.map((filter) => 
-            {  
-                if (filter.type === action.filterType) {
-                    return filter.data.length ? 
-                        { type: filter.type, data: [...filter.data, action.filter]}
-                        : { type: filter.type, data: [action.filter]};
-                } 
-                return filter;
-            });
-
+        case actions.ADD_FILTER: 
             return {
                 ...state,
-                filters: newState,
+                filters: state.filters.map((filter) => {  
+                    if (filter.type === action.filterType) {
+                        return { type: filter.type, data: [...filter.data, action.filter]}
+                    }
+                    return filter;
+                }),
             };
-        }
-        case actions.REMOVE_FILTER: {
-            const newState = state.filters.map((filter) => 
-            {  
-                if (filter.type === action.filterType) {
-                    return {type: filter.type, data: filter.data.filter(f => f !== action.filter)}
-                } 
-                return filter;
-            });
-
+        
+        case actions.REMOVE_FILTER: 
             return {
                 ...state,
-                filters: newState,
+                filters: state.filters.map((filter) => 
+                {  
+                    if (filter.type === action.filterType) {
+                        return {type: filter.type, data: filter.data.filter(f => f !== action.filter)}
+                    } 
+                    return filter;
+                }),
             };
-        }
+        
         default:
             return state;
     }

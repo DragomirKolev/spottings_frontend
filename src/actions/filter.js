@@ -26,9 +26,8 @@ export const getFilterByType = (filterType) => {
     return filters.find(filter => filter.type === filterType);
 };
 
-export const getUniqueBirdTypes = (spottings) => { 
-    return [...new Set(spottings.map(spotting => spotting.bird_type))];
-};
+export const getUniqueBirdTypes = (spottings) => 
+    [...new Set(spottings.map(spotting => spotting.bird_type))];
 
 export const setBirdTypeFilters = (add) => {
     const spottings = store.getState().spottingsReducer.spottings;
@@ -37,39 +36,21 @@ export const setBirdTypeFilters = (add) => {
     uniqueBirdTypes.length > 0 && uniqueBirdTypes.forEach((birdType) => {
         const filter = getFilterByType(filterType.BIRD_TYPE);
         if (filter.type === filterType.BIRD_TYPE) {
-            if (add){ 
-                store.dispatch({
-                    type: actions.ADD_FILTER,
-                    filter: birdType,
-                    filterType: filterType.BIRD_TYPE
-                });
-            } else {
-                store.dispatch({
-                    type: actions.REMOVE_FILTER,
-                    filter: birdType,
-                    filterType: filterType.BIRD_TYPE
-                });
-            }
+            store.dispatch({
+                type: add ? actions.ADD_FILTER : actions.REMOVE_FILTER,
+                filter: birdType,
+                filterType: filterType.BIRD_TYPE
+            });
         }
     })
 }
 
-export const updateFilter = (passedFilter, filterType) => {
+export const updateFilter = (filterValue, filterType) => {
     const filter = getFilterByType(filterType);
 
-    if (filter.type === filterType) {
-        if (filter.data.includes(passedFilter)) {
-            store.dispatch({
-                type: actions.REMOVE_FILTER,
-                filter: passedFilter,
-                filterType: filterType
-            });
-        } else {
-            store.dispatch({
-                type: actions.ADD_FILTER,
-                filter: passedFilter,
-                filterType: filterType
-            });
-        }
-    };
-}
+    store.dispatch({
+        type: filter.data.includes(filterValue) ? actions.REMOVE_FILTER : actions.ADD_FILTER,
+        filter: filterValue,
+        filterType: filterType
+    });
+};
